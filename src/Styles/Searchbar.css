@@ -1,0 +1,96 @@
+/* Base Styles */
+.search-bar {
+    display: flex;
+    width: 100vw; /* Full width */
+  }
+  
+  .search-bar-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 2px solid #e5e7eb; /* Gray 200 */
+    border-radius: 45px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .search-bar-input-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 35px;
+    padding-right: 15px;
+    border-radius: 45px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .search-bar-input-container:hover {
+    background-color: #f3f4f6; /* Gray 100 */
+  }
+  
+  .search-bar-input {
+    outline: none;
+    border-radius: 4px;
+    padding-left: 8px;
+  }
+  
+  .search-bar-date {
+    outline: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb; /* Gray 200 */
+  }
+  
+  .search-bar-select {
+    outline: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb; /* Gray 200 */
+  }
+  
+  .search-bar-button {
+    background-color: #ef4444; /* Red 500 */
+    margin-left: 85px;
+    margin-right: 35px;
+    color: white;
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+  }
+  
+  .search-bar-button:hover {
+    background-color: #dc2626; /* Red 600 */
+  }
+  
+  /* Label Styles */
+  .search-bar-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4b5563; /* Gray 600 */
+    margin-bottom: 4px;
+  }
+  
+  /* Breakpoints */
+  @media (max-width: 1024px) {
+    .search-bar-container {
+      transform: scale(0.9); /* Scale down for medium screens */
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .search-bar-container {
+      transform: scale(1); /* Full scale for larger screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .search-bar-container {
+      display: none; /* Hide the search bar on small screens */
+    }
+  }
+  
