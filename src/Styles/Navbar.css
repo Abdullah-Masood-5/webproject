@@ -11,6 +11,7 @@
   transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transform transition */
 }
 
+
 /* Navbar inner container */
 .navbar-inner {
   display: flex;
@@ -23,18 +24,19 @@
 
 /* Logo */
 .navbar-logo {
-  font-size: 2.25rem;
+  font-size: 2.0rem;
   font-weight: bold;
   margin-right: auto;
   margin-left: 20px;
   color: #ff385c; /* Airbnb red color */
-  transition: color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+  transition: color 0.3s ease; /* Add transform transition */
 }
 
 .navbar-logo:hover {
   color: #d02b4b; /* Slightly darker red for hover effect */
-  transform: scale(1.05); /* Slightly scale up on hover for smoother effect */
 }
+
+
 
 /* Search Bar */
 /* Navbar Searchbar */
@@ -220,4 +222,9 @@
 .scroll-list-item:hover {
   background-color: #e2e2e2;
   transform: scale(1.05); /* Slightly scale up on hover for smoother effect */
+}
+.image {
+  width: 40px;
+  height: 40px;
+  transform: translateY(8px); /* Adjust the value as needed */
 }
