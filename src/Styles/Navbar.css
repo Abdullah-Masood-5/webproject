@@ -114,7 +114,10 @@
 
 .nav-link {
   color: #4a4a4a;
-  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  /* font-weight: bold; */
+  /* font-weight: 500; */
   transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Add transform transition */
 }
 

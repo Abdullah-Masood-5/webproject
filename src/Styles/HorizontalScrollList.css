@@ -2,39 +2,60 @@
 .horizontal-scroll-list {
     display: flex;
     background-color: white;
-    width: 100vw; /* Full width */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    gap: 16px; /* Space between items */
+    width: 80vw; /* Full width */
+    overflow-x:auto; /* Enable horizontal scrolling */
+    gap: 30px; /* Space between items */
     padding: 16px; /* Padding inside the container */
+    margin-right: 100px; /* Align to the left */
+    align-self: center;
+    margin-left: 100px;
+    scroll-snap-type: x mandatory; /* Smooth scroll snapping */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
 }
 
-/* Remove the scrollbar */
-.no-scrollbar::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Webkit browsers */
+/* Prevent horizontal scrollbar from appearing when it's not needed */
+.horizontal-scroll-list::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for WebKit browsers (Chrome, Safari) */
 }
 
-.no-scrollbar {
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
+.horizontal-scroll-list {
+    scrollbar-width: none; /* For Firefox: Hides the scrollbar */
 }
 
 /* Button styles */
 .horizontal-scroll-item {
     background-color: white;
-    padding: 8px 0;
-    border-radius: 12px; /* Rounded corners */
+    padding: 4px 0;
+    border-radius: 8px; /* Rounded corners */
     display: flex;
-    width: 120px; /* Fixed width for buttons */
+    width: 100px; /* Fixed width for buttons */
     flex-direction: column;
     justify-content: center;
+    border: none;
     align-items: center;
-    gap: 8px; /* Space between the icon and text */
-    font-size: 0.875rem; /* Equivalent to text-sm */
-    font-weight: 500; /* Equivalent to font-medium */
+    gap: 4px; /* Space between the icon and text */
+    font-size: 1.1rem; /* Equivalent to text-sm */
+    font-weight: 200; /* Equivalent to font-medium */
     color: #4b5563; /* Gray text (Equivalent to text-gray-700) */
-    transition: background-color 0.2s ease-in-out; /* Smooth hover transition */
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth hover transition */
+    scroll-snap-align: start; /* Ensures the item snaps to the left when scrolling */
 }
 
 /* Hover effect */
 .horizontal-scroll-item:hover {
     background-color: #f3f4f6; /* Light gray background on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Active state styling for selected category (if implemented) */
+.horizontal-scroll-item.active {
+    background-color: #d1d5db; /* Slightly darker background for active item */
+    color: #1f2937; /* Darker text color for active state */
+}
+
+/* Scrollbar styles for better user experience (optional) */
+
+/* Optional: Add smooth scrolling behavior */
+.horizontal-scroll-list {
+    scroll-behavior: smooth;
 }
