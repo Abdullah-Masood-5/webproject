@@ -71,7 +71,7 @@
     color: #fbbf24; /* Equivalent to text-yellow-500 */
 }
 .listing-card img{
-    width: 75%;
+    width: 90%;
     height: 250px;
     object-fit:fill;
 }
