@@ -7,15 +7,16 @@ const ListingCard = ({ listing }) => {
   return (
     <div className="listing-card">
       <img
-        src={listing.imageUrl}
+        src={listing.image}
         alt={listing.title}
         className="listing-image"
       />
       <div className="listing-details">
-        <h3 className="listing-title">{listing.title}</h3>
-        <p className="listing-location">{listing.location}</p>
-        <p className="listing-price">${listing.price} per night</p>
-        <p className="listing-description">{listing.description}</p>
+        <h2 className="listing-card-title">{listing.title}</h2>
+        <p className="listing-card-type">{listing.type}</p>
+        <p className="listing-card-guests">Guests: {listing.guests}</p>
+        <p className="listing-card-price">${listing.price} / night</p>
+        <p className="listing-card-rating">Rating: {listing.rating} ⭐</p>
       </div>
     </div>
   );
