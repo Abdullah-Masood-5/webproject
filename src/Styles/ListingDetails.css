@@ -1,0 +1,213 @@
+/* Container and Layout Styles */
+.listing-container {
+  margin-top: 150px;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+  background-color: white;
+}
+
+@media (min-width: 1280px) {
+  .listing-container {
+    padding-left: 180px;
+    padding-right: 180px;
+  }
+}
+
+/* Image Grid Layout */
+.image-grid {
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  gap: 6px;
+  grid-template-columns: repeat(5, 1fr);
+  border-radius: 25px;
+}
+
+.main-image {
+  grid-column: span 5; /* Span across all columns on large screens */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 40px; /* Limit maximum height */
+  width: 10%; /* Ensure it takes full width */
+  object-fit: cover; /* Cover the container without distortion */
+}
+
+@media (min-width: 768px) {
+  .main-image {
+    grid-column: span 3;
+  }
+}
+
+.secondary-images {
+  display: none;
+  height: 4%;
+  max-height:400px ;
+  grid-column: span 2;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 6px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .secondary-images {
+    display: grid;
+  }
+}
+
+/* Image Styles */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Container */
+.content-container {
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.content-spacing {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .content-spacing {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Typography */
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.subtitle {
+  color: #4B5563;
+}
+
+/* Badges and Icons */
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.badge-icon {
+  color: #EAB308;
+}
+
+/* Host Section */
+.host-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: #E5E7EB;
+}
+
+.host-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Feature Icons */
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 1.0625rem;
+  margin-bottom: 2rem;
+}
+
+.feature-icon {
+  margin-top: 0.75rem;
+  font-size: 1.75rem;
+  margin-right: 0.938rem;
+  color: #374151;
+}
+
+/* Booking Card */
+.booking-card {
+  border: 1px solid #e7e7e7;
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1.875rem 1rem;
+}
+
+.price-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.125rem;
+}
+
+.date-picker {
+  border: 1px solid #818181;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 24rem;
+}
+
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 0.938rem;
+  border-bottom: 1px solid #818181;
+  padding-bottom: 1rem;
+  gap: 1rem;
+}
+
+/* Reserve Button */
+.reserve-button {
+  width: 100%;
+  padding: 0.5rem 0;
+  background-image: linear-gradient(to right, #DB2777, #9D174D);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+/* Price Breakdown */
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: underline;
+  color: #4B5563;
+  font-weight: 500;
+  font-size: 0.938rem;
+}
+
+.divider {
+  margin: 0 auto;
+  height: 2px;
+  background-color: #D1D5DB;
+}
+
+/* Rare Find Card */
+.rare-find-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.rare-find-title {
+  color: #9D174D;
+  font-weight: 600;
+}
+
+/* Report Button */
+.report-button {
+  font-size: 0.875rem;
+  color: #6B7280;
+  text-decoration: underline;
+}

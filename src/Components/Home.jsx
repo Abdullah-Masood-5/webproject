@@ -1,45 +1,80 @@
-import React, { useState } from "react";
-import ListingsGrid from "./ListingCards";
-import "../Styles/Listingcards.css"; // Import the CSS file
-import { FaSearch } from "react-icons/fa";
-import "../Styles/Home.css";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
+import { FaSearch, FaStar } from "react-icons/fa";
+import HorizontalScrollList from "./HorizontalScrollList";
+import "../Styles/Home.css";
 const Home = () => {
-  const [category, setCategory] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [listings, setListings] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const navigate = useNavigate();
 
-  const handleSearch = async () => {
-    console.log("Search button clicked"); // Add logging to check if function is called
-    var inputElement = document.getElementById("myInput");
+  useEffect(() => {
+    fetchListings();
+  }, []);
 
-    // Get the value entered by the user
-    var inputValue = inputElement.value;
-    setCategory(inputValue);
-
+  const fetchListings = async () => {
     try {
-      const serverUrl = process.env.REACT_APP_SERVER_PORT;
-      const response = await axios.get(`${serverUrl}/api/listings/search`, {
-        params: {
-          query: inputValue, // Send location as query parameter
-        },
-      });
-      setSearchResults(response.data); // Update the search results state
-      console.log("Search results:", response.data);
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/api/listings`
+      );
+      setListings(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
-      console.error("Error fetching search results:", error);
+      console.error("Error fetching listings:", error);
+      setListings([]);
     }
   };
 
+  const handleCardClick = (id) => {
+    navigate(`/listing/${id}`);
+  };
+
+  const handleSearch = () => {
+    navigate("/search");
+  };
+
+  const filteredListings = selectedCategory
+    ? listings.filter((listing) => listing.category === selectedCategory)
+    : listings;
+
   return (
-    <div className="home">
-      <div className="search-container">
-        <input type="text" id="myInput" placeholder="Search..." />
+    <div className="home-container">
+      <HorizontalScrollList setCategory={setSelectedCategory} />
+
+      <div className="search-bar">
         <button onClick={handleSearch} className="search-button">
-          <FaSearch className="search-icon" />
+          <FaSearch className="search-icon" /> Search Listings
         </button>
       </div>
-      <ListingsGrid category={category} />
+
+      <div className="listings-grid">
+        {filteredListings.map((listing) => (
+          <div
+            key={listing.id}
+            onClick={() => handleCardClick(listing.id)}
+            className="listing-card"
+          >
+            <img
+              src={listing.image}
+              loading="lazy"
+              alt={listing.title}
+              className="listing-image"
+            />
+            <div className="listing-details">
+              <h2 className="listing-title">{listing.title}</h2>
+              <p className="listing-type">{listing.type}</p>
+              <p className="listing-category">{listing.category}</p>
+              <p className="listing-guests">Guests: {listing.guests}</p>
+              <p className="listing-price">${listing.price} / night</p>
+              <p className="listing-rating">
+                <span className="rating-label">Rating:</span>
+                <span className="rating-value">{listing.rating}</span>
+                <FaStar size={20} className="star-icon" />
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

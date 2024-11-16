@@ -1,152 +1,150 @@
-import React from 'react';
-import '../Styles//HorizontalScrollList.css'; // Import the CSS file
-
-import { FaUmbrellaBeach, FaTree, FaStar, FaMoneyBillAlt, FaUsers, FaDog, FaCoffee, FaHome, FaMountain, FaHeart, FaSwimmer, FaFire, FaSkiing, FaHiking, FaPlane, FaPaw, FaLandmark, FaGolfBall, FaBuilding, FaShip, FaSpa, FaSun, FaCocktail, FaLaptopHouse } from 'react-icons/fa';
+import React from "react";
+import {
+  FaTree,
+  FaStar,
+  FaMoneyBillAlt,
+  FaDog,
+  FaCoffee,
+  FaMountain,
+  FaHeart,
+  FaSwimmer,
+  FaFire,
+} from "react-icons/fa";
+import {
+  MdOutlineBeachAccess,
+  MdOutlineNature,
+  MdOutlineStar,
+  MdOutlineAttachMoney,
+  MdOutlineGroup,
+  MdOutlinePets,
+  MdOutlineLocalCafe,
+  MdOutlineHome,
+  MdOutlinePool,
+  MdOutlineSnowboarding,
+  MdOutlineHiking,
+  MdOutlineFlight,
+  MdOutlineLocalDining,
+  MdOutlineBusinessCenter,
+  MdOutlineFitnessCenter,
+} from "react-icons/md";
+import "../Styles/HorizontalScrollList.css";
 
 const categories = [
-  {
-    name: "All",
-    category: "",
-    icon: <FaHome className="text-[25px] mb-[5px]" />,
-  },
+  { name: "All", category: "", icon: <MdOutlineHome className="icon" /> },
   {
     name: "Beachfront",
     category: "Beachfront",
-    icon: <FaUmbrellaBeach className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineBeachAccess className="icon" />,
   },
-  {
-    name: "Cabins",
-    category: "Cabins",
-    icon: <FaTree className="text-[25px] mb-[5px]" />,
-  },
+  { name: "Cabins", category: "Cabins", icon: <FaTree className="icon" /> },
   {
     name: "Trending",
     category: "Trending",
-    icon: <FaStar className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineStar className="icon" />,
   },
   {
     name: "Luxury",
     category: "Luxury",
-    icon: <FaMoneyBillAlt className="text-[25px] mb-[5px]" />,
+    icon: <FaMoneyBillAlt className="icon" />,
   },
   {
     name: "Budget",
     category: "Budget",
-    icon: <FaMoneyBillAlt className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineAttachMoney className="icon" />,
   },
   {
     name: "Family",
     category: "Family-Friendly",
-    icon: <FaUsers className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineGroup className="icon" />,
   },
   {
     name: "Farms",
     category: "Pet-Friendly",
-    icon: <FaDog className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlinePets className="icon" />,
   },
   {
     name: "Unique",
     category: "Unique Stays",
-    icon: <FaCoffee className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineLocalCafe className="icon" />,
   },
   {
     name: "Romantic",
     category: "Romantic Getaways",
-    icon: <FaHeart className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineNature className="icon" />,
   },
   {
     name: "Adventure",
     category: "Adventure",
-    icon: <FaMountain className="text-[25px] mb-[5px]" />,
+    icon: <FaMountain className="icon" />,
   },
   {
     name: "Swimming",
     category: "Swimming",
-    icon: <FaSwimmer className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlinePool className="icon" />,
   },
-  {
-    name: "Camping",
-    category: "Camping",
-    icon: <FaFire className="text-[25px] mb-[5px]" />,
-  },
+  { name: "Camping", category: "Camping", icon: <FaFire className="icon" /> },
   {
     name: "Skiing",
     category: "Skiing",
-    icon: <FaSkiing className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineSnowboarding className="icon" />,
   },
   {
     name: "Hiking",
     category: "Hiking",
-    icon: <FaHiking className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineHiking className="icon" />,
   },
   {
     name: "Flights",
     category: "Flights",
-    icon: <FaPlane className="text-[25px] mb-[5px]" />,
+    icon: <MdOutlineFlight className="icon" />,
   },
   {
-    name: "Pets Allowed",
-    category: "Pets Allowed",
-    icon: <FaPaw className="text-[25px] mb-[5px]" />,
+    name: "Dining",
+    category: "Dining",
+    icon: <MdOutlineLocalDining className="icon" />,
   },
   {
-    name: "Historical",
-    category: "Historical",
-    icon: <FaLandmark className="text-[25px] mb-[5px]" />,
+    name: "Business",
+    category: "Business",
+    icon: <MdOutlineBusinessCenter className="icon" />,
   },
   {
-    name: "Golf",
-    category: "Golf",
-    icon: <FaGolfBall className="text-[25px] mb-[5px]" />,
+    name: "Fitness",
+    category: "Fitness",
+    icon: <MdOutlineFitnessCenter className="icon" />,
   },
+  { name: "Wildlife", category: "Wildlife", icon: <FaDog className="icon" /> },
   {
-    name: "Luxury Villas",
-    category: "Luxury Villas",
-    icon: <FaBuilding className="text-[25px] mb-[5px]" />,
+    name: "Relaxation",
+    category: "Relaxation",
+    icon: <FaCoffee className="icon" />,
   },
-  {
-    name: "Boats",
-    category: "Boats",
-    icon: <FaShip className="text-[25px] mb-[5px]" />,
-  },
+  { name: "Culture", category: "Culture", icon: <FaStar className="icon" /> },
   {
     name: "Wellness",
     category: "Wellness",
-    icon: <FaSpa className="text-[25px] mb-[5px]" />,
+    icon: <FaHeart className="icon" />,
   },
- 
-  {
-    name: "Countryside",
-    category: "Countryside",
-    icon: <FaSun className="text-[25px] mb-[5px]" />,
-  },
-  {
-    name: "Nightlife",
-    category: "Nightlife",
-    icon: <FaCocktail className="text-[25px] mb-[5px]" />,
-  },
-  {
-    name: "Workations",
-    category: "Workations",
-    icon: <FaLaptopHouse className="text-[25px] mb-[5px]" />,
-  },
+  { name: "New", category: "New", icon: <FaSwimmer className="icon" /> },
 ];
-const HorizontalScrollList = ({ setCategory }) => {
-    return (
-        <div className="horizontal-scroll-list no-scrollbar">
-            {categories.map((category, index) => (
-                <button
-                    key={index}
-                    onClick={() => setCategory(category.category)}
-                    className="horizontal-scroll-item"
-                >
-                    {category.icon}
-                    <p>{category.name}</p>
-                </button>
-            ))}
-        </div>
-    );
-};
 
+const HorizontalScrollList = ({ setCategory }) => {
+  return (
+    <div className="scroll-container">
+      <div className="scroll-wrapper">
+        {categories.map((category, index) => (
+          <button
+            key={index}
+            onClick={() => setCategory(category.category)}
+            className="category-button"
+          >
+            {category.icon}
+            <p className="category-name">{category.name}</p>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default HorizontalScrollList;

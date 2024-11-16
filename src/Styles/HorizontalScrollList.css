@@ -1,61 +1,87 @@
-/* Container styles for the horizontal scroll list */
-.horizontal-scroll-list {
-    display: flex;
-    background-color: white;
-    width: 80vw; /* Full width */
-    overflow-x:auto; /* Enable horizontal scrolling */
-    gap: 30px; /* Space between items */
-    padding: 16px; /* Padding inside the container */
-    margin-right: 100px; /* Align to the left */
-    align-self: center;
-    margin-left: 100px;
-    scroll-snap-type: x mandatory; /* Smooth scroll snapping */
-    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+/* Scroll container */
+.scroll-container {
+  display: flex;
+  overflow-x: hidden;
+  padding-top: 1rem;
+  max-width: 88vw;
+  margin: 0 auto;
+  background-color: white;
 }
 
-/* Prevent horizontal scrollbar from appearing when it's not needed */
-.horizontal-scroll-list::-webkit-scrollbar {
-    display: none; /* Hide the scrollbar for WebKit browsers (Chrome, Safari) */
+/* Scroll wrapper */
+.scroll-wrapper {
+  display: flex;
+  background-color: white;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;
+  background-color: white;
 }
 
-.horizontal-scroll-list {
-    scrollbar-width: none; /* For Firefox: Hides the scrollbar */
+/* Category button */
+.category-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border: none;
+  align-items: center;
+  padding: 0.5rem;
+  margin-right: 2.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280; /* Gray color */
+  border-radius: 0.75rem;
+  transition: background-color 0.2s ease-in-out;
 }
 
-/* Button styles */
-.horizontal-scroll-item {
-    background-color: white;
-    padding: 4px 0;
-    border-radius: 8px; /* Rounded corners */
-    display: flex;
-    width: 100px; /* Fixed width for buttons */
-    flex-direction: column;
-    justify-content: center;
-    border: none;
-    align-items: center;
-    gap: 4px; /* Space between the icon and text */
-    font-size: 1.1rem; /* Equivalent to text-sm */
-    font-weight: 200; /* Equivalent to font-medium */
-    color: #4b5563; /* Gray text (Equivalent to text-gray-700) */
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth hover transition */
-    scroll-snap-align: start; /* Ensures the item snaps to the left when scrolling */
+.category-button:hover {
+  background-color: #f3f4f6; /* Light gray on hover */
 }
 
-/* Hover effect */
-.horizontal-scroll-item:hover {
-    background-color: #f3f4f6; /* Light gray background on hover */
-    transform: scale(1.05); /* Slight zoom effect on hover */
+/* Category name */
+.category-name {
+  color: #4b5563; /* Darker gray for the text */
 }
 
-/* Active state styling for selected category (if implemented) */
-.horizontal-scroll-item.active {
-    background-color: #d1d5db; /* Slightly darker background for active item */
-    color: #1f2937; /* Darker text color for active state */
+/* Icon size */
+.icon {
+  font-size: 25px;
+  margin-bottom: 5px;
 }
 
-/* Scrollbar styles for better user experience (optional) */
+@media (max-width: 768px) {
+  .scroll-container {
+    max-width: 100vw;
+    padding-top: 0.5rem;
+  }
 
-/* Optional: Add smooth scrolling behavior */
-.horizontal-scroll-list {
-    scroll-behavior: smooth;
+  .scroll-wrapper {
+    padding: 0.5rem 0;
+  }
+
+  .category-button {
+    margin-right: 1rem;
+    font-size: 0.75rem;
+    padding: 0.25rem;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-button {
+    margin-right: 0.5rem;
+    font-size: 0.625rem;
+    padding: 0.25rem;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
 }

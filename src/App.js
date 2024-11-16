@@ -1,16 +1,24 @@
-import { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import Home from './Components/Home'; 
+import Home from './Components/Home';
 import Footer from './Components/Footer';
+import ListingDetails from './Components/ListingDetails';
+import SearchListings from './Components/SearchListings';
+import Booking from './Components/Booking';
 
 function App() {
-  const [category, setCategory] = useState('');
+
   return (
+
     <Router>
-      <Navbar setCategory={setCategory} />
-      <Home />
-      <Footer/>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<SearchListings />} />
+        <Route path="/listing/:id" element={<ListingDetails />} />
+        <Route path="/booking/:id" element={<Booking />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
