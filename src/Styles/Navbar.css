@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   transition: transform 0.3s ease; /* Use transform for smoother animation */
 }
 

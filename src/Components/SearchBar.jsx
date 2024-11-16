@@ -12,15 +12,14 @@ const SearchBar = () => {
   const [searchResults, setSearchResults] = useState([]); // State to store search results
 
   const handleSearch = async () => {
+    console.log("Search button clicked"); // Add logging to check if function is called
     try {
-      const response = await axios.get(
-        "http://localhost:8000/api/listings/search",
-        {
-          params: {
-            query: location, // Send location as query parameter
-          },
-        }
-      );
+      const serverUrl = process.env.REACT_APP_SERVER_PORT;
+      const response = await axios.get(`${serverUrl}/api/listings/search`, {
+        params: {
+          query: location, // Send location as query parameter
+        },
+      });
       setSearchResults(response.data); // Update the search results state
       console.log("Search results:", response.data);
     } catch (error) {

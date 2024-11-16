@@ -39,8 +39,7 @@ const ListingsGrid = ({ category }) => {
         let url = `${serverUrl}/api/listings`; // Default API endpoint for getting all listings
         if (category) {
           url = `${serverUrl}/api/listings/search?query=${category}`; // API endpoint for filtered listings by category
-        }
-
+        } 
         // Fetch listings from the server using Axios
         const response = await axios.get(url);
         setListings(response.data); // Update the state with the fetched data

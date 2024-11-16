@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Navbar setCategory={setCategory} />
-      <Home category={category} />
+      <Home />
       <Footer/>
     </Router>
   );
