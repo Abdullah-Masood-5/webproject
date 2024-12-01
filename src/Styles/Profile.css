@@ -1,0 +1,107 @@
+/* Container styling */
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding-left: 30px;
+  padding-top: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333333;
+  margin-top: 120px;
+}
+
+/* Title styling */
+.profile-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #ff385c;
+}
+
+/* Text information styling */
+.profile-username,
+.profile-email, 
+.profile-role {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555555;
+}
+
+.profile-username strong,
+.profile-email strong,
+.profile-role strong {
+  color: #333333;
+}
+
+/* Form styling */
+.profile-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-label {
+  font-size: 1rem;
+  color: #555555;
+  margin-bottom: 5px;
+}
+
+/* Input and textarea styling */
+.profile-input,
+.profile-textarea {
+  width: 90%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-input:focus,
+.profile-textarea:focus {
+  border-color: #ff385c;
+  box-shadow: 0 0 5px rgba(255, 56, 92, 0.4);
+  outline: none;
+}
+
+.profile-textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Button styling */
+.profile-update-button {
+  padding: 22px;
+  margin-bottom: 20px;
+  margin-right:220px;
+  margin-left: 220px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff385c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-button:hover {
+  background-color: #e63950;
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .profile-title {
+    font-size: 1.8rem;
+  }
+
+  .profile-button {
+    font-size: 0.9rem;
+  }
+}
