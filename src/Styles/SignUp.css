@@ -1,0 +1,98 @@
+/* Form container */
+.signup-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333333;
+  text-align: center;
+  margin-top: 120px;
+}
+
+/* Input fields */
+.signup-input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-input:focus {
+  border-color: #ff385c;
+  box-shadow: 0 0 5px rgba(255, 56, 92, 0.4);
+  outline: none;
+}
+
+/* Select dropdown styling */
+.signup-role-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px 0;
+  font-size: 0.9rem;
+  color: #555555;
+}
+
+.signup-select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-select:focus {
+  border-color: #ff385c;
+  box-shadow: 0 0 5px rgba(255, 56, 92, 0.4);
+  outline: none;
+}
+
+/* Button styling */
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff385c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #e63950;
+}
+
+/* Message styling */
+.signup-message {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #28a745; /* Success message color */
+}
+
+/* Link styling */
+.signin-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ff385c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.signin-link:hover {
+  color: #e63950;
+}
