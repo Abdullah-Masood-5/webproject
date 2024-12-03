@@ -1,0 +1,106 @@
+/* Container styling */
+.listing-details-container {
+  max-width: 1800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333333;
+  text-align: center;
+  margin-top: 110px;
+  max-height: auto;
+}
+
+/* Title styling */
+.listing-details-title {
+  font-size: 2rem;
+  color: #ff385c;
+  margin-bottom: 20px;
+}
+
+/* Image styling */
+.image-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Two columns */
+  grid-template-rows: repeat(2, 1fr); /* Two rows of equal height */
+  gap: 10px; /* Space between images */
+  max-height: 500px;
+}
+
+/* First image spans one column and two rows */
+.image-grid .main-image {
+  grid-column: span 1; /* Takes up one column */
+  grid-row: span 2; /* Takes up two rows */
+}
+
+/* Individual image item */
+.image-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image styling */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto; /* Adjust height automatically */
+  }
+
+  .image-grid .main-image {
+    grid-column: span 1; /* Single column */
+    grid-row: span 1; /* Single row */
+  }
+
+  .image-item:not(.main-image) {
+    display: none; /* Hide other images */
+  }
+}
+
+/* Description and details styling */
+.listing-details-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.listing-details-location,
+.listing-details-price {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Booking button */
+.booking-link {
+  text-decoration: none;
+}
+
+.booking-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff385c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.booking-button:hover {
+  background-color: #e63950;
+  transform: scale(1.02);
+}
