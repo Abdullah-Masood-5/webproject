@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "../Styles/HomeListings.css";
+import Footer from './Footer';
 const ListingsPage = () => {
   const [listings, setListings] = useState([]);
 
@@ -20,7 +21,7 @@ const ListingsPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className='listing-home'>
       <h1 className='listing-title-h1'>All Listings</h1>
       <div className="listing-grid">
         {listings.map((listing) => (
@@ -42,6 +43,7 @@ const ListingsPage = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

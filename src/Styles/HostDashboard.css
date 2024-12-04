@@ -1,0 +1,180 @@
+/* Container styling */
+.host-dashboard-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333333;
+  margin-top: 120px;
+}
+
+/* Title styling */
+.host-dashboard-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #ff385c;
+  margin-bottom: 30px;
+}
+
+/* Form styling */
+.host-dashboard-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.host-dashboard-input{
+  flex: 1 1 calc(50% - 15px);
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.host-dashboard-file-inputt {
+  flex: 1 1 calc(50% - 15px);
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  color: #ff385c;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.host-dashboard-input:focus,
+.host-dashboard-file-input:focus {
+  border-color: #ff385c;
+  box-shadow: 100 0 5px rgba(255, 56, 92, 0.4);
+  outline: none;
+}
+
+.host-dashboard-file-input {
+  flex: 1 1 100%;
+}
+
+/* Button styling */
+.host-dashboard-button {
+  padding: 120px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff385c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.host-dashboard-button:hover {
+  background-color: #e63950;
+  transform: scale(1.02);
+}
+
+/* Current images display */
+.host-dashboard-current-images {
+  flex: 1 1 100%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.host-dashboard-current-images p {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.host-dashboard-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+/* Table styling */
+.host-dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.host-dashboard-table thead tr {
+  background-color: #ff385c;
+  color: #ffffff;
+}
+
+.host-dashboard-table th,
+.host-dashboard-table td {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+}
+
+.host-dashboard-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.host-dashboard-table tbody tr:hover {
+  background-color: #ffe7eb;
+}
+
+/* Action buttons */
+.host-dashboard-edit-button,
+.host-dashboard-delete-button {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.host-dashboard-edit-button {
+  background-color: #ffab00;
+  color: #ffffff;
+}
+
+.host-dashboard-edit-button:hover {
+  background-color: #e69900;
+}
+
+.host-dashboard-delete-button {
+  background-color: #ff385c;
+  color: #ffffff;
+}
+
+.host-dashboard-delete-button:hover {
+  background-color: #e63950;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .host-dashboard-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .host-dashboard-input {
+    flex: 1 1 100%;
+  }
+
+  .host-dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .host-dashboard-button {
+    font-size: 0.9rem;
+  }
+
+  .host-dashboard-table th,
+  .host-dashboard-table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
