@@ -3,8 +3,8 @@ import SignUp from './Components/SignUp';
 import SignIn from './Components/SignIn';
 import Profile from './Components/Profile';
 import Navbar from './Components/Navbar';
-import ListingDetailsPage from './Components/ListingDetails';
-import ListingsPage from './Components/HomeListings';
+import ListingsPage from "./Components/HomeListings";
+import ListingDetailsPage from "./Components/ListingDetails";
 
 
 function App() {
