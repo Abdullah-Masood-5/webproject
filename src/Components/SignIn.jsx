@@ -25,11 +25,14 @@ const SignIn = () => {
 
       setMessage("Login successful");
 
+      window.location.reload(); // Reload the page after successful login
       // Redirect user based on role
       if (res.data.role === "Host") {
         navigate("/hostdashboard"); // Redirect to Host Dashboard if role is Host
+        window.reload();
       } else {
         navigate("/profile"); // Redirect to homepage or Guest dashboard
+        window.reload();
       }
     } catch (error) {
       setMessage(error.response?.data?.error || "Login failed");

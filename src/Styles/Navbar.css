@@ -50,7 +50,7 @@
   width: 100%;
   z-index: 10;
   top: 0;
-  height: 100px;
+  height: 80px;
   padding: 5px;
 }
 
@@ -136,6 +136,10 @@
   font-size: 28px;
 }
 
+.search-icon:hover {
+  background-color: #e63950;
+   cursor: pointer; 
+}
 /* Navigation links */
 .nav-links {
     text-decoration: none;

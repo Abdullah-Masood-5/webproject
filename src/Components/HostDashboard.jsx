@@ -8,6 +8,7 @@ const HostDashboard = () => {
     description: "",
     price: "",
     location: "",
+    category: "",
     images: [], // This will hold the new images for upload
   });
   const [editId, setEditId] = useState(null);
@@ -34,6 +35,7 @@ const HostDashboard = () => {
           description: listingToEdit.description,
           price: listingToEdit.price,
           location: listingToEdit.location,
+          category: listingToEdit.category,
           images: [], // Reset images as new files will be uploaded
         });
       }
@@ -85,6 +87,7 @@ const HostDashboard = () => {
       description: "",
       price: "",
       location: "",
+      category: "",
       images: [],
     });
     // Re-fetch listings after submit to get updated data
@@ -142,6 +145,15 @@ const HostDashboard = () => {
           name="location"
           placeholder="Location"
           value={formData.location}
+          onChange={handleChange}
+          required
+          className="host-dashboard-input"
+        />
+        <input
+          type="text"
+          name="category"
+          placeholder="Category"
+          value={formData.category}
           onChange={handleChange}
           required
           className="host-dashboard-input"

@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import "../Styles/navbar.css";
-import {
-  FaBars,
-  FaTimes,
-  FaUserCircle,
-} from "react-icons/fa";
+import "../Styles/Navbar.css";
+import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { LuGlobe } from "react-icons/lu";
 
@@ -16,22 +12,28 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [homePath, setHomePath] = useState(true);
-  const location = useLocation();
+  const location = useLocation(); // Track the location (path)
 
+  // This will re-render the navbar whenever the route changes
   useEffect(() => {
     setHomePath(location.pathname === "/");
-  }, [location.pathname]);
+  }, [location.pathname]); // Dependency on location.pathname
 
+  // Toggle menu for mobile view
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Show search bar when scrolled
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setShowSearchBar(true);
     } else {
       setShowSearchBar(false);
     }
+  };
+  const handleSearch = () => {
+    navigate("/search");
   };
 
   useEffect(() => {
@@ -40,10 +42,10 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   useEffect(() => {
-    // Check if a token exists
     const token = localStorage.getItem("token");
-    const role = localStorage.getItem("role"); // Assume role is saved in localStorage after login
+    const role = localStorage.getItem("role");
 
     if (token) {
       setIsLoggedIn(true);
@@ -83,7 +85,10 @@ function Navbar() {
                 <p className="search-item border-right">Anywhere</p>
                 <p className="search-item border-right">Any week</p>
                 <p className="search-item">Any Guests</p>
-                <AiOutlineSearch className="search-icon" />
+                <AiOutlineSearch
+                  className="search-icon"
+                  onClick={handleSearch}
+                />
               </div>
             ) : (
               <>
@@ -92,14 +97,25 @@ function Navbar() {
                     <p className="search-item border-right">Anywhere</p>
                     <p className="search-item border-right">Any week</p>
                     <p className="search-item">Any Guests</p>
-                    <AiOutlineSearch className="search-icon" />
+                    <AiOutlineSearch
+                      className="search-icon"
+                      onClick={handleSearch}
+                    />
                   </div>
                 ) : (
                   <div className="nav-links">
-                    <NavLink to="/stays" className="nav-link">
+                    <NavLink
+                      to="/stays"
+                      className="nav-link"
+                      onClick={() => setIsOpen(false)}
+                    >
                       Stays
                     </NavLink>
-                    <NavLink to="/experiences" className="nav-link">
+                    <NavLink
+                      to="/experiences"
+                      className="nav-link"
+                      onClick={() => setIsOpen(false)}
+                    >
                       Experiences
                     </NavLink>
                   </div>
@@ -128,7 +144,7 @@ function Navbar() {
           </div>
 
           {isOpen && (
-            <div className="dropdown-menu-desktop">
+            <div onClick={toggleMenu} className="dropdown-menu-desktop">
               <div className="dropdown-content">
                 {/* Conditionally render based on user role */}
                 {isLoggedIn && userRole === "Host" && (
@@ -177,34 +193,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// <nav className="navbar">
-//   <div className="navbar-logo">MyApp</div>
-//   <ul className="navbar-links">
-//     <li><Link to="/">Home</Link></li>
-
-//     {/* Show Host Dashboard link only for users with the "Host" role */}
-//     {isLoggedIn && userRole === 'Host' && (<>
-
-//       <li><Link to="/hostdashboard">Host Dashboard</Link></li>
-//       <li><Link to="/host/bookings">View Your Bookings</Link></li>
-//       </>
-//     )}
-
-//     {isLoggedIn && userRole === 'Guest' && (
-//       <li><Link to="/bookinglist">booking list</Link></li>
-//     )}
-
-//     {isLoggedIn ? (
-//       <>
-//         <li><Link to="/profile">Profile</Link></li>
-//         <li><button onClick={handleLogout} className="logout-button">Logout</button></li>
-//       </>
-//     ) : (
-//       <>
-//         <li><Link to="/signup">Sign Up</Link></li>
-//         <li><Link to="/signin">Sign In</Link></li>
-//       </>
-//     )}
-//   </ul>
-// </nav>

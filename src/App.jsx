@@ -3,19 +3,27 @@ import SignUp from './Components/SignUp';
 import SignIn from './Components/SignIn';
 import Profile from './Components/Profile';
 import Navbar from './Components/Navbar';
-import ListingsPage from "./Components/HomeListings";
-import ListingDetailsPage from "./Components/ListingDetails";
-
-
+import HostDashboard from './Components/HostDashboard';
+import ListingsPage from './Components/HomeListings';
+import ListingDetailsPage from './Components/ListingDetailsPage';
+import BookingPage from './Components/BookingPage';
+import BookingList from './Components/BookingList';
+import HostBookings from './Components/HostBookings';
+import SearchListings from './Components/SearchListings';
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<ListingsPage />} />
+        <Route path="/bookinglist" element={<BookingList />} />
+        <Route path="/listing/:id" element={<ListingDetailsPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/listing/:id" element={<ListingDetailsPage />} />
+        <Route path="/book/:id" element={<BookingPage />} />
+        <Route path="/host/bookings" element={<HostBookings />} />
+        <Route path="/search" element={<SearchListings />} />
+        <Route path="/hostdashboard" element={<HostDashboard />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>

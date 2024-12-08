@@ -42,7 +42,7 @@ input[type="number"]:focus {
   outline: none;
 }
 
-button[type="submit"] {
+.booking-page-submit[type="submit"] {
   padding: 12px;
   font-size: 1rem;
   background-color: #ff385c;
@@ -57,7 +57,7 @@ button[type="submit"]:hover {
   background-color: #e63950;
 }
 
-p {
+.booking-page-text {
   margin-top: 20px;
   font-size: 1rem;
   color: #28a745;

@@ -41,7 +41,7 @@ const BookingPage = () => {
         <label className="booking-page-labels">Check-out Date: </label>
         <input type="date" name="checkOut" onChange={handleChange} required />
 
-        <label className = "booking-page-labels">Number of Guests: </label>
+        <label className="booking-page-labels">Number of Guests: </label>
         <input
           className="booking-page-input-field"
           type="number"
@@ -51,9 +51,11 @@ const BookingPage = () => {
           required
         />
 
-        <button className="booking-page-submit" type="submit">Book Now</button>
+        <button className="booking-page-submit" type="submit">
+          Book Now
+        </button>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p className="booking-page-text">{message}</p>}
     </div>
   );
 };
