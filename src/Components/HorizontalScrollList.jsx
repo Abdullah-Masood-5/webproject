@@ -1,4 +1,4 @@
-import "../Styles//HorizontalScrollList.css"; // Import the CSS file
+import "../Styles//HorizontalScrollList.css";
 
 import {
   FaUmbrellaBeach,
@@ -39,13 +39,13 @@ const categories = [
     icon: <FaUmbrellaBeach className="text-[25px] mb-[5px]" />,
   },
   {
-    name: "Cabins",
-    category: "Cabins",
+    name: "Forest",
+    category: "Forest",
     icon: <FaTree className="text-[25px] mb-[5px]" />,
   },
   {
-    name: "Trending",
-    category: "Trending",
+    name: "Apartment",
+    category: "Apartment",
     icon: <FaStar className="text-[25px] mb-[5px]" />,
   },
   {
