@@ -4,17 +4,19 @@ import axios from 'axios';
 import '../Styles/HostBookings.css';
 const HostBookings = () => {
   const [bookings, setBookings] = useState([]);
-
   useEffect(() => {
     const fetchBookings = async () => {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       try {
-        const res = await axios.get('http://localhost:5000/api/admin-bookings/bookings', {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        const res = await axios.get(
+          "http://localhost:5000/api/admin-bookings/bookings",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         setBookings(res.data);
       } catch (error) {
-        console.error('Error fetching bookings:', error);
+        console.error("Error fetching bookings:", error);
       }
     };
 
