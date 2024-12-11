@@ -58,12 +58,6 @@ const ListingsPage = () => {
               <p className="home-listing-location">{listing.location}</p>
               <p className="home-listing-location">{listing.category}</p>
               <p className="home-listing-price">{listing.price} per night</p>
-              <Link
-                to={`/listing/${listing._id}`}
-                className="home-listing-details-link"
-              >
-                View Details
-              </Link>
             </div>
           ))
         ) : (

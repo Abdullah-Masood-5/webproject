@@ -94,20 +94,7 @@
 }
 
 /* Link styling */
-.home-listing-details-link {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: #ff385c;
-  color: #ffffff;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
+
 
 .home-listing-details-link:hover {
   background-color: #e63950;
