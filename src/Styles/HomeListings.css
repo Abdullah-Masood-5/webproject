@@ -10,7 +10,6 @@
   padding-right: 4px;
   margin-left: 60px;
 }
-
 .home-search-button {
   background-color: white;
   border: 1px solid #351515;
@@ -24,12 +23,12 @@
   margin-bottom: 16px;
   color: gray;
   cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .home-search-button:hover {
   background-color: #ff385c;
   color: white;
-  transition: ease-in-out 0.3s;
 }
 
 .home-search-icon {
