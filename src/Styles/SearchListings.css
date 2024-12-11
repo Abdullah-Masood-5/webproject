@@ -1,7 +1,7 @@
 /* SearchListings.css */
 
 .search-container {
-  margin-top: 150px;
+  margin-top: 160px;
   min-height: 100vh;
   padding: 0 16px;
 }
@@ -42,6 +42,7 @@
   border-radius: 45px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   gap: 16px;
+  margin-top: 70px;
   padding: 16px;
 }
 
