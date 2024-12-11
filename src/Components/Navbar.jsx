@@ -105,14 +105,14 @@ function Navbar() {
                 ) : (
                   <div className="nav-links">
                     <NavLink
-                      to="/stays"
+                      to="#!"
                       className="nav-link"
                       onClick={() => setIsOpen(false)}
                     >
                       Stays
                     </NavLink>
                     <NavLink
-                      to="/experiences"
+                      to="#!"
                       className="nav-link"
                       onClick={() => setIsOpen(false)}
                     >
