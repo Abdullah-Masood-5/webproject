@@ -3,6 +3,7 @@
   width: 100%;
   overflow-x: hidden;
 }
+
 .home-search-bar {
   width: 90%;
   padding-left: 4px;
@@ -24,15 +25,17 @@
   color: gray;
   cursor: pointer;
 }
+
 .home-search-button:hover {
   background-color: #ff385c;
   color: white;
-  transition:ease-in-out 0.3s;  
+  transition: ease-in-out 0.3s;
 }
 
 .home-search-icon {
   margin-right: 15px;
 }
+
 .home-listing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -40,7 +43,7 @@
   margin-top: 20px;
   margin-left: 30px;
   margin-right: 30px;
-  border:none;
+  border: none;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
@@ -55,16 +58,25 @@
 }
 
 .home-listing-card:hover {
-  cursor:default;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
 
 /* Image styling */
 .home-listing-image {
-   width: 100%;
+  width: 100%;
   height: 290px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.home-listing-card:hover {
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.home-listing-image:hover {
+  transform: scale(1.02);
+  transition: ease-in-out 0.3s;
 }
 
 /* Text styling */
@@ -74,6 +86,7 @@
   color: #333333;
   text-align: center;
 }
+
 .home-listing-title-h1 {
   font-size: 1.5rem;
   margin: 20px 30px 5px;
@@ -93,8 +106,21 @@
   color: #ff385c;
 }
 
-/* Link styling */
+.home-listing-rating {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
 
+.home-rating-label {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.home-rating-value {
+  font-size: 18px;
+  margin-right: 4px;
+}
 
 .home-listing-details-link:hover {
   background-color: #e63950;

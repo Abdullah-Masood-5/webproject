@@ -29,6 +29,9 @@ const ListingsPage = () => {
   const handleSearch = () => {
     navigate("/search");
   };
+  const handlelisting = (listing) => {
+    navigate(`/listing/${listing._id}`);
+  };
 
   return (
     <div className="home-listing-home">
@@ -44,7 +47,11 @@ const ListingsPage = () => {
       <div className="home-listing-grid">
         {listings.length > 0 ? (
           listings.map((listing) => (
-            <div key={listing._id} className="home-listing-card">
+            <div
+              key={listing._id}
+              className="home-listing-card"
+              onClick={() => handlelisting(listing)}
+            >
               <img
                 src={
                   listing.images && listing.images.length > 0
