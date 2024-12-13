@@ -96,3 +96,39 @@
 .signup-link:hover {
   color: #e63950;
 }
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .signin-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .signin-image {
+    display: none;
+  }
+
+  .signin-form-container {
+    padding: 0;
+  }
+
+  .signin-form {
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .signin-input {
+    font-size: 0.9rem;
+
+  }
+
+  .signin-button {
+    padding: 10px;
+
+  }
+
+  .signin-heading {
+    font-size: 1.5rem;
+
+  }
+}
