@@ -20,7 +20,7 @@
 
 /* Text information styling */
 .profile-username,
-.profile-email, 
+.profile-email,
 .profile-role {
   font-size: 1rem;
   margin-bottom: 10px;
@@ -41,6 +41,7 @@
   gap: 15px;
 }
 
+/* Label styling */
 .profile-label {
   font-size: 1rem;
   color: #555555;
@@ -50,7 +51,7 @@
 /* Input and textarea styling */
 .profile-input,
 .profile-textarea {
-  width: 90%;
+  width: 100%;
   padding: 12px;
   font-size: 1rem;
   border: 1px solid #cccccc;
@@ -72,10 +73,7 @@
 
 /* Button styling */
 .profile-update-button {
-  padding: 22px;
-  margin-bottom: 20px;
-  margin-right:220px;
-  margin-left: 220px;
+  padding: 12px 30px;
   font-size: 1rem;
   font-weight: bold;
   background-color: #ff385c;
@@ -84,15 +82,20 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
 }
 
-.profile-button:hover {
+.profile-update-button:hover {
   background-color: #e63950;
   transform: scale(1.02);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+
+/* Medium Devices (Tablets and below) */
+@media (max-width: 1024px) {
   .profile-container {
     padding: 20px;
   }
@@ -101,7 +104,72 @@
     font-size: 1.8rem;
   }
 
-  .profile-button {
+  .profile-label,
+  .profile-input,
+  .profile-textarea,
+  .profile-update-button {
+    width: 100%;
+  }
+
+  .profile-update-button {
+    padding: 15px 30px;
+  }
+}
+
+/* Small Devices (Mobile Phones and below) */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 15px;
+    margin-top: 80px;
+  }
+
+  .profile-title {
+    font-size: 1.6rem;
+  }
+
+  .profile-label {
+    font-size: 0.95rem;
+  }
+
+  .profile-input,
+  .profile-textarea {
+    font-size: 0.95rem;
+  }
+
+  .profile-update-button {
+    padding: 15px 30px;
     font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Devices (Mobile Phones) */
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 10px;
+    margin-top: 60px;
+  }
+
+  .profile-title {
+    font-size: 1.5rem;
+  }
+
+  .profile-username,
+  .profile-email,
+  .profile-role {
+    font-size: 0.9rem;
+  }
+
+  .profile-label {
+    font-size: 0.9rem;
+  }
+
+  .profile-input,
+  .profile-textarea {
+    font-size: 0.9rem;
+  }
+
+  .profile-update-button {
+    padding: 12px ;
+    font-size: 0.8rem;
   }
 }
