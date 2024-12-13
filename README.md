@@ -72,6 +72,8 @@ public/
 README.md
 src/
     App.jsx
+    index.css
+    main.jsx
     assets/
     Components/
         BookingList.jsx
@@ -87,8 +89,7 @@ src/
         SearchListings.jsx
         SignIn.jsx
         SignUp.jsx
-    index.css
-    main.jsx
+
     Styles/
         BookingList.css
         BookingPage.css
