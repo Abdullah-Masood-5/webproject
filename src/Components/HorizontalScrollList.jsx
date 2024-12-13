@@ -8,6 +8,7 @@ import {
   FaUsers,
   FaDog,
   FaCoffee,
+  FaPiggyBank,
   FaHome,
   FaMountain,
   FaHeart,
@@ -56,7 +57,7 @@ const categories = [
   {
     name: "Budget",
     category: "Budget",
-    icon: <FaMoneyBillAlt className="text-[25px] mb-[5px]" />,
+    icon: <FaPiggyBank className="text-[25px] mb-[5px]" />,
   },
   {
     name: "Family",
@@ -109,7 +110,7 @@ const categories = [
     icon: <FaPlane className="text-[25px] mb-[5px]" />,
   },
   {
-    name: "Pets Allowed",
+    name: "Pets_Allowed",
     category: "Pets Allowed",
     icon: <FaPaw className="text-[25px] mb-[5px]" />,
   },
@@ -124,7 +125,7 @@ const categories = [
     icon: <FaGolfBall className="text-[25px] mb-[5px]" />,
   },
   {
-    name: "Luxury Villas",
+    name: "Luxury_Villas",
     category: "Luxury Villas",
     icon: <FaBuilding className="text-[25px] mb-[5px]" />,
   },
@@ -165,7 +166,7 @@ const HorizontalScrollList = ({ setCategory }) => {
           className="horizontal-scroll-item"
         >
           {category.icon}
-          <p>{category.name}</p>
+          <p className="horizontal-scroll-list-text">{category.name}</p>
         </button>
       ))}
     </div>
