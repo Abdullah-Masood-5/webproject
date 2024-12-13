@@ -1,6 +1,9 @@
-/* Form container */
-.signin-form {
-  max-width: 400px;
+.signin-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
   margin: 50px auto;
   padding: 30px;
   background-color: #ffffff;
@@ -8,11 +11,37 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   color: #333333;
-  text-align: center;
   margin-top: 120px;
 }
 
-/* Input styling */
+.signin-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.signin-image img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.signin-form-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.signin-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: none;
+  text-align: center;
+}
+
 .signin-input {
   width: 100%;
   padding: 12px;
@@ -24,12 +53,12 @@
 }
 
 .signin-input:focus {
+  flex-direction: column;
   border-color: #ff385c;
   box-shadow: 0 0 5px rgba(255, 56, 92, 0.4);
   outline: none;
 }
 
-/* Button styling */
 .signin-button {
   width: 100%;
   padding: 12px;
@@ -48,14 +77,12 @@
   background-color: #e63950;
 }
 
-/* Message styling */
 .signin-message {
   margin-top: 15px;
   font-size: 0.9rem;
-  color: #28a745; /* Success message color */
+  color: #28a745;
 }
 
-/* Link styling */
 .signup-link {
   display: block;
   margin-top: 20px;
