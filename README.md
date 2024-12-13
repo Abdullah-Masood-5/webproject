@@ -95,6 +95,14 @@ src/
         Footer.css
         HomeListings.css
         HorizontalScrollList.css
+        HostBookings.css
+        HostDashboard.css
+        ListingDetailsPage.css
+        Navbar.css
+        Profile.css
+        SearchListings.css
+        SignIn.css
+        SignUp.css
         ...
 vite.config.js
 ```
