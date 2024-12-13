@@ -12,19 +12,18 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [homePath, setHomePath] = useState(true);
-  const location = useLocation(); // Track the location (path)
+  const location = useLocation(); 
 
-  // This will re-render the navbar whenever the route changes
   useEffect(() => {
     setHomePath(location.pathname === "/");
-  }, [location.pathname]); // Dependency on location.pathname
+  }, [location.pathname]); 
 
-  // Toggle menu for mobile view
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Show search bar when scrolled
+
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setShowSearchBar(true);
@@ -61,8 +60,9 @@ function Navbar() {
     localStorage.removeItem("role");
     setIsLoggedIn(false);
     setUserRole(null);
-    navigate("/signin"); // Redirect to login page
+    navigate("/signin"); 
   };
+  
 
   return (
     <header className="navbar-header">
@@ -146,7 +146,6 @@ function Navbar() {
           {isOpen && (
             <div onClick={toggleMenu} className="dropdown-menu-desktop">
               <div className="dropdown-content">
-                {/* Conditionally render based on user role */}
                 {isLoggedIn && userRole === "Host" && (
                   <>
                     <NavLink to="/hostdashboard" className="dropdown-item">

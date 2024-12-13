@@ -129,33 +129,26 @@
 
   .signup-form {
     max-width: 300px;
-    /* Make form smaller */
     padding: 20px;
-    /* Reduce padding for smaller screens */
   }
 
   .signup-input {
     font-size: 0.9rem;
-    /* Reduce input size */
   }
 
   .signup-button {
     padding: 10px;
-    /* Reduce button padding */
   }
 
   .signup-role-label {
     font-size: 0.85rem;
-    /* Slightly smaller font for label */
   }
 
   .signup-select {
     font-size: 0.9rem;
-    /* Smaller font for select dropdown */
   }
 
   .signup-heading {
     font-size: 1.5rem;
-    /* Smaller heading size for mobile */
   }
 }
