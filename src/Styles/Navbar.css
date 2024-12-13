@@ -1,3 +1,4 @@
+
 /* Header styles */
 * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,46 +14,30 @@
   top: 0;
   height: 80px;
   padding: 5px;
-  box-sizing: border-box;
-  /* Ensures padding doesn't affect width */
 }
 
 .navbar-container {
-  max-width: 1200px;
-  /* Limit container width */
   margin: 0 auto;
   padding: 0 15px;
-  box-sizing: border-box;
-  /* Ensures padding doesn't affect width */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  position: relative;
 }
 
 .navbar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  /* Ensures the navbar content stays within the container */
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  /* Allow flex items to wrap on smaller screens */
 }
 
 /* Logo styles */
 .logo-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
 }
 
 .logo-image {
-  display: none;
-  /* Hide logo image */
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+  margin-left: 20px;
 }
 
 .logo-text {
@@ -60,10 +45,6 @@
   font-weight: 650;
   color: #ef4444;
   text-decoration: none;
-  margin-left: 20px;
-  margin-top: 10px;
-  text-align: left;
-  /* Align text to the left */
 }
 
 /* Search bar container styles */
@@ -79,6 +60,7 @@
   transform: translateX(-100%);
   animation: showSearchBar 0.5s ease-in-out forwards;
 }
+
 
 /* Keyframes for showing the search bar */
 @keyframes showSearchBar {
@@ -126,13 +108,10 @@
 .nav-links {
   text-decoration: none;
   display: flex;
+  margin-right: -165px;
+  background-color: white;
+  z-index: 90;
   gap: 24px;
-  flex-wrap: wrap;
-  /* Allow links to wrap on small screens */
-  margin-right: 0;
-  justify-content: center;
-  width: 100%;
-  /* Ensure links do not overflow */
 }
 
 .nav-link {
@@ -150,8 +129,6 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
-  /* Allow user controls to wrap */
 }
 
 .host-text {
@@ -202,6 +179,7 @@
 }
 
 /* Dropdown menu styles */
+
 .dropdown-content {
   display: flex;
   flex-direction: column;
@@ -232,6 +210,131 @@
 
 .dropdown-item:hover {
   background-color: #f3f4f6;
+}
+
+@media (max-width: 1024px) {
+  .navbar-header {
+    height: 80px;
+  }
+
+  .navbar-content {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .nav-links {
+    margin-right: 0;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .logo-text {
+    font-size: 22px;
+  }
+
+  .search-bar-container {
+    margin-top: 10px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .user-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* For screens less than 768px (mobile phones and below) */
+@media (max-width: 768px) {
+  .navbar-header {
+    height: 70px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-image {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .search-bar-container {
+    width: 100%;
+    margin-top: 10px;
+    opacity: 1;
+    transform: translateX(0);
+    padding: 8px;
+  }
+
+  .search-item {
+    font-size: 14px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .user-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .user-menu {
+    margin-right: 0;
+    padding: 6px 10px;
+  }
+}
+
+/* For screens less than 480px (small mobile phones) */
+@media (max-width: 480px) {
+
+
+
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-image {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .search-bar-container {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+    /* Hide the nav links on small screens */
+  }
+
+  .user-controls {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .user-menu {
+    padding: 6px 8px;
+  }
+
+  .dropdown-content {
+    width: 180px;
+    /* Smaller width on small screens */
+  }
 }
 
 /* Media Query for Screens Below 1024px */
