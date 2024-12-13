@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// import process from "process";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../Styles/HomeListings.css";
@@ -15,7 +16,9 @@ const ListingsPage = () => {
     const fetchListings = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/listings?category=${category}`
+          `${
+            import.meta.env.VITE_API_BASE_URL
+          }/api/listings?category=${category}`
         );
         setListings(res.data);
       } catch (error) {
@@ -55,7 +58,9 @@ const ListingsPage = () => {
               <img
                 src={
                   listing.images && listing.images.length > 0
-                    ? `http://localhost:5000/${listing.images[0]}`
+                    ? `${import.meta.env.VITE_API_BASE_URL}/${
+                        listing.images[0]
+                      }`
                     : "path/to/placeholder-image.jpg" // Provide a default placeholder image
                 }
                 className="home-listing-image"

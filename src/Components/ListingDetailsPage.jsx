@@ -10,7 +10,9 @@ const ListingDetailsPage = () => {
 
   useEffect(() => {
     const fetchListing = async () => {
-      const res = await axios.get(`http://localhost:5000/api/listings/${id}`);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}/api/listings/${id}`
+      );
       setListing(res.data);
     };
 
@@ -28,21 +30,25 @@ const ListingDetailsPage = () => {
       <div className="image-grid">
         <div className="image-item main-image">
           <img
-            src={`http://localhost:5000/${listing.images[0]}`}
+            src={`${import.meta.env.VITE_API_BASE_URL}/${listing.images[0]}`}
             alt={listing.title}
             className="image"
           />
         </div>
         <div className="image-item">
           <img
-            src={`http://localhost:5000/${listing.images[0]}`}
+            src={`${
+            import.meta.env.VITE_API_BASE_URL
+          }/${listing.images[0]}`}
             alt={listing.title}
             className="image"
           />
         </div>
         <div className="image-item">
           <img
-            src={`http://localhost:5000/${listing.images[0]}`}
+            src={`${
+            import.meta.env.VITE_API_BASE_URL
+          }/${listing.images[0]}`}
             alt={listing.title}
             className="image"
           />

@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import '../Styles/SignUp.css';
+import { useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "../Styles/SignUp.css";
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    role: 'Guest' // Default role
+    username: "",
+    email: "",
+    password: "",
+    role: "Guest", // Default role
   });
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,10 +18,13 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/api/auth/register`,
+        formData
+      );
       setMessage(res.data.message);
     } catch (error) {
-      setMessage(error.response?.data?.error || 'Registration failed');
+      setMessage(error.response?.data?.error || "Registration failed");
     }
   };
 

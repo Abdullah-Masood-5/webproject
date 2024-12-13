@@ -1,5 +1,5 @@
-import  { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 import "../Styles/BookingList.css";
 
 const BookingList = () => {
@@ -8,15 +8,18 @@ const BookingList = () => {
 
   useEffect(() => {
     const fetchBookings = async () => {
-      const token = localStorage.getItem('token');
-      
+      const token = localStorage.getItem("token");
+
       try {
-        const res = await axios.get('http://localhost:5000/api/bookings/get-bookings', {
-          headers: { Authorization: `Bearer ${token}` }
-        });
+        const res = await axios.get(
+          `${import.meta.env.VITE_API_BASE_URL}/api/bookings/get-bookings`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         setBookings(res.data);
       } catch {
-        setError('Failed to fetch bookings');
+        setError("Failed to fetch bookings");
       }
     };
 
@@ -36,7 +39,9 @@ const BookingList = () => {
             <div key={booking._id} className="booking-item">
               <h3 className="booking-list-title">{booking.listingId.title}</h3>
               <img
-                src={`http://localhost:5000/${booking.listingId.images[0]}`}
+                src={`${import.meta.env.VITE_API_BASE_URL}/${
+                  booking.listingId.images[0]
+                }`}
                 className="image-listing"
                 alt={booking.listingId.title}
               />

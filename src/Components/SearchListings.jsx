@@ -21,7 +21,9 @@ const SearchListings = () => {
     try {
       // Send a GET request to search listings based on title and/or category
       const response = await axios.get(
-        "http://localhost:5000/api/listings/search",
+        `${
+            import.meta.env.VITE_API_BASE_URL
+          }/api/listings/search`,
         { params }
       );
       setResults(response.data); // Set the new search results

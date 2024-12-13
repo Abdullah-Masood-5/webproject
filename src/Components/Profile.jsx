@@ -12,7 +12,9 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       const token = localStorage.getItem('token');
-      const res = await axios.get('http://localhost:5000/api/profile', {
+      const res = await axios.get(`${
+            import.meta.env.VITE_API_BASE_URL
+          }/api/profile`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUser(res.data);
@@ -29,7 +31,9 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
-    await axios.put('http://localhost:5000/api/profile', formData, {
+    await axios.put(`${
+            import.meta.env.VITE_API_BASE_URL
+          }/api/profile`, formData, {
       headers: { Authorization: `Bearer ${token}` }
     });
     alert('Profile updated successfully');

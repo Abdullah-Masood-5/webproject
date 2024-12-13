@@ -16,9 +16,12 @@ const HostDashboard = () => {
   useEffect(() => {
     const fetchListings = async () => {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/admin/listings", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}/api/admin/listings`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       setListings(res.data);
     };
 
@@ -68,7 +71,7 @@ const HostDashboard = () => {
     if (editId) {
       // Update the listing
       await axios.put(
-        `http://localhost:5000/api/admin/listings/${editId}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/admin/listings/${editId}`,
         form,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -76,9 +79,13 @@ const HostDashboard = () => {
       );
     } else {
       // Add a new listing
-      await axios.post("http://localhost:5000/api/admin/listings", form, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/api/admin/listings`,
+        form,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
     }
 
     setEditId(null);
@@ -91,17 +98,23 @@ const HostDashboard = () => {
       images: [],
     });
     // Re-fetch listings after submit to get updated data
-    const res = await axios.get("http://localhost:5000/api/admin/listings", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const res = await axios.get(
+      `${import.meta.env.VITE_API_BASE_URL}/api/admin/listings`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     setListings(res.data);
   };
 
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
-    await axios.delete(`http://localhost:5000/api/admin/listings/${id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    await axios.delete(
+      `${import.meta.env.VITE_API_BASE_URL}/api/admin/listings/${id}`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     setListings(listings.filter((listing) => listing._id !== id));
   };
 
@@ -170,7 +183,7 @@ const HostDashboard = () => {
                 .images.map((image, idx) => (
                   <img
                     key={idx}
-                    src={`http://localhost:5000/${image}`}
+                    src={`${import.meta.env.VITE_API_BASE_URL}/${image}`}
                     alt={`Listing Image ${idx + 1}`}
                     className="host-dashboard-image"
                   />

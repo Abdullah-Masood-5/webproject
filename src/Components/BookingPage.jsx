@@ -21,7 +21,7 @@ const BookingPage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/bookings",
+        `${import.meta.env.VITE_API_BASE_URL}/api/bookings`,
         { ...formData, listingId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
