@@ -51,7 +51,7 @@
 /* Input and textarea styling */
 .profile-input,
 .profile-textarea {
-  width: 100%;
+  width: 90%;
   padding: 12px;
   font-size: 1rem;
   border: 1px solid #cccccc;
