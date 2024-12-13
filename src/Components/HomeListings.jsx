@@ -10,7 +10,7 @@ import Footer from "./Footer";
 const ListingsPage = () => {
   const navigate = useNavigate();
   const [listings, setListings] = useState([]);
-  const [category, setCategory] = useState(""); // State for selected category
+  const [category, setCategory] = useState(""); 
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -27,7 +27,7 @@ const ListingsPage = () => {
     };
 
     fetchListings();
-  }, [category]); // Refetch listings whenever category changes
+  }, [category]); 
 
   const handleSearch = () => {
     navigate("/search");
@@ -61,7 +61,7 @@ const ListingsPage = () => {
                     ? `${import.meta.env.VITE_API_BASE_URL}/${
                         listing.images[0]
                       }`
-                    : "path/to/placeholder-image.jpg" // Provide a default placeholder image
+                    : "path/to/placeholder-image.jpg" 
                 }
                 className="home-listing-image"
                 alt={listing.title}
