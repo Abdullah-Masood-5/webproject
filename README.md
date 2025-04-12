@@ -104,7 +104,6 @@ src/
         SearchListings.css
         SignIn.css
         SignUp.css
-        ...
 vite.config.js
 ```
 
